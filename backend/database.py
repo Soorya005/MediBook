@@ -1,5 +1,5 @@
 """Database configuration and helpers for MediBook."""
-for (i=0 i++ )
+"This is for checking CI/CD working "
 
 from __future__ import annotations
 
