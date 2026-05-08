@@ -1,0 +1,20 @@
+name: CodeChat Auto-Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync_codechat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger CodeChat Reindex
+        run: |
+          curl -X POST \
+          "${{ secrets.CODECHAT_BACKEND_URL }}/repository/sync/${{ secrets.CODECHAT_REPO_ID }}" \
+          -H "Authorization: Bearer ${{ secrets.CODECHAT_API_KEY }}" \
+          --fail \
+          --retry 3 \
+          --retry-delay 5
