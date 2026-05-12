@@ -1,0 +1,29 @@
+Easy
+
+What does this project do?
+What is the purpose of main.py?
+What does api.js do?
+What is the role of auth.py?
+Which files handle the frontend pages?
+
+Medium
+
+How does the login flow work in this codebase?
+How are JWT tokens created and used?
+How does the frontend talk to the backend?
+What does the Appointment model contain?
+How are user roles handled in the app?
+What happens when a user registers?
+How are files uploaded in the frontend?
+How are messages fetched and displayed?
+
+Hard
+
+Explain the full authentication flow from login to protected route access.
+How does the React app manage auth state across pages?
+How are unread messages and notifications calculated?
+What is the relationship between users, appointments, and prescriptions?
+How do the backend routes and frontend API client work together?
+What happens when an appointment is created in this system?
+How is password hashing implemented and where is it used?
+Which parts of the code would need changes to add a new messaging feature?
