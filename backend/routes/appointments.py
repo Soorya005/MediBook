@@ -7,12 +7,12 @@ from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from backend.database import get_db
-from backend.models.appointment import Appointment
-from backend.models.user import User
-from backend.schemas.appointment import AppointmentCancel, AppointmentCreate, AppointmentPublic, AppointmentReschedule, AppointmentListResponse
-from backend.utils.auth import get_current_user, require_role, ensure_active_user
-from backend.utils.email import appointment_confirmation, appointment_canceled, appointment_rescheduled
+from database import get_db
+from models.appointment import Appointment
+from models.user import User
+from schemas.appointment import AppointmentCancel, AppointmentCreate, AppointmentPublic, AppointmentReschedule, AppointmentListResponse
+from utils.auth import get_current_user, require_role, ensure_active_user
+from utils.email import appointment_confirmation, appointment_canceled, appointment_rescheduled
 
 router = APIRouter(prefix="/api/appointments", tags=["appointments"])
 

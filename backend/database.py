@@ -50,9 +50,9 @@ def db_session() -> Generator[Session, None, None]:
 
 def init_db() -> None:
     """Create database tables if they do not exist."""
-    from backend.models.user import User  # noqa: F401
-    from backend.models.appointment import Appointment  # noqa: F401
-    from backend.models.prescription import Prescription  # noqa: F401
+    from models.user import User  # noqa: F401
+    from models.appointment import Appointment  # noqa: F401
+    from models.prescription import Prescription  # noqa: F401
 
     Base.metadata.create_all(bind=engine)
 
@@ -74,9 +74,9 @@ def get_database_url() -> str:
 
 def reset_db() -> None:
     """Drop and recreate tables. Use only in development."""
-    from backend.models.user import User  # noqa: F401
-    from backend.models.appointment import Appointment  # noqa: F401
-    from backend.models.prescription import Prescription  # noqa: F401
+    from models.user import User  # noqa: F401
+    from models.appointment import Appointment  # noqa: F401
+    from models.prescription import Prescription  # noqa: F401
 
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)

@@ -7,12 +7,12 @@ from datetime import datetime, timedelta
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from backend.database import get_db
-from backend.models.appointment import Appointment
-from backend.models.prescription import Prescription
-from backend.models.user import User
-from backend.schemas.appointment import PrescriptionCreate, PrescriptionPublic, PrescriptionListResponse
-from backend.utils.auth import get_current_user, require_role, ensure_active_user
+from database import get_db
+from models.appointment import Appointment
+from models.prescription import Prescription
+from models.user import User
+from schemas.appointment import PrescriptionCreate, PrescriptionPublic, PrescriptionListResponse
+from utils.auth import get_current_user, require_role, ensure_active_user
 
 router = APIRouter(prefix="/api/prescriptions", tags=["prescriptions"])
 

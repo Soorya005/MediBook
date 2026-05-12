@@ -7,10 +7,10 @@ from datetime import datetime, timedelta
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
-from backend.database import get_db
-from backend.models.appointment import Appointment
-from backend.models.user import User
-from backend.schemas.user import AvailabilitySlot, DoctorPublic
+from database import get_db
+from models.appointment import Appointment
+from models.user import User
+from schemas.user import AvailabilitySlot, DoctorPublic
 
 router = APIRouter(prefix="/api/doctors", tags=["doctors"])
 

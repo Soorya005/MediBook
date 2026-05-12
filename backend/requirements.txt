@@ -37,6 +37,9 @@ python-dateutil==2.9.0.post0
 # pydantic: request/response validation
 # email-validator: robust email parsing
 #
+# File handling
+python-multipart==0.0.6
+#
 # Additional production hardening
 # Consider adding logging config in main.py if needed.
 #
@@ -48,6 +51,7 @@ python-dateutil==2.9.0.post0
 # SQLAlchemy 2.x is used with the 2.0-style ORM.
 # JWTs are signed using HS256 in this template.
 # Password hashing uses bcrypt for compatibility.
+# python-multipart: required for file upload handling in FastAPI
 #
 # -----------
 # Local development

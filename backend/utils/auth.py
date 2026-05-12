@@ -11,8 +11,8 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
-from backend.database import get_db
-from backend.models.user import User
+from database import get_db
+from models.user import User
 
 SECRET_KEY = "CHANGE_ME_SUPER_SECRET"  # Replace in production
 ALGORITHM = "HS256"

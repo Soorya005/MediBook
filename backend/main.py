@@ -9,11 +9,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from backend.database import init_db, db_session
-from backend.models.user import User
-from backend.models.appointment import Appointment
-from backend.routes import auth, appointments, doctors, prescriptions
-from backend.utils.auth import get_password_hash
+from database import init_db, db_session
+from models.user import User
+from models.appointment import Appointment
+from routes import auth, appointments, doctors, prescriptions, files, messages, triggers
+from utils.auth import get_password_hash
 
 app = FastAPI(title="MediBook API", version="1.0.0")
 
@@ -29,6 +29,10 @@ app.include_router(auth.router)
 app.include_router(appointments.router)
 app.include_router(doctors.router)
 app.include_router(prescriptions.router)
+app.include_router(files.router)
+app.include_router(messages.router)
+app.include_router(triggers.router)
+app.include_router(triggers.trigger_router)
 
 
 @app.get("/")
@@ -110,6 +114,8 @@ def _seed_appointments(db: Session) -> None:
 def on_startup() -> None:
     """Initialize database and seed sample data."""
     init_db()
-    with db_session() as db:
-        _seed_users(db)
-        _seed_appointments(db)
+    # Note: Seeding commented out due to bcrypt version compatibility.
+    # Create users via /api/auth/register endpoint instead.
+    # with db_session() as db:
+    #     _seed_users(db)
+    #     _seed_appointments(db)
